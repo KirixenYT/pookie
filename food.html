@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food?</title>
+    <link rel="stylesheet" href="css/food.css" />
+    <style>
+      input[type="radio"]:not([value="Sam pookie"]) + label {
+        color: red;
+      }
+      input[type="radio"]:not([value="Sam pookie"]) + label:before {
+        content: "nah this is not what u should pick ";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="foodquestion">
+      <b>What food would you like to eat?</b>
+    </div>
+
+    <div class="food-selection">
+      <div class="food-item">
+        <img src="food/burgers.jpeg" alt="Burgers, fries and fried chicken" />
+        <label>
+          <input
+            type="radio"
+            name="food"
+            value="Burgers, fries and fried chicken"
+          />
+          burgers and fried chicken
+        </label>
+      </div>
+      <div class="food-item">
+        <img src="food/dog.jpeg" alt="dog" />
+        <label>
+          <input type="radio" name="food" value="hotdog" />
+          hotdog
+        </label>
+      </div>
+      <div class="food-item">
+        <img src="food/sam.png" alt="sampookie" />
+        <label>
+          <input type="radio" name="food" value="Sam pookie" /> Me 🎀
+        </label>
+      </div>
+      <div class="food-item">
+        <img src="food/pasta.jpeg" alt="pasta" />
+        <label>
+          <input type="radio" name="food" value="pasta" />
+          pasta
+        </label>
+      </div>
+      <div class="food-item">
+        <img src="food/pizza.jpeg" alt="pizza" />
+        <label>
+          <input type="radio" name="food" value="pizza" />
+          pizza
+        </label>
+      </div>
+      <div class="food-item">
+        <img src="food/salad.jpeg" alt="salad" />
+        <label>
+          <input type="radio" name="food" value="salad" />
+          salad
+        </label>
+      </div>
+      <div class="food-item">
+        <img src="food/steak.jpeg" alt="steak" />
+        <label>
+          <input type="radio" name="food" value="steak" />
+          steak
+        </label>
+      </div>
+      <div class="food-item">
+        <img src="food/sushi.jpeg" alt="sushi" />
+        <label>
+          <input type="radio" name="food" value="sushi" />
+          sushi
+        </label>
+      </div>
+    </div>
+    <button class="button" onclick="checkSelection()">
+      Continue UWU
+    </button>
+
+    <script>
+      function checkSelection() {
+        const radios = document.querySelectorAll('input[type="radio"]');
+        let correctSelected = false;
+
+        radios.forEach((radio) => {
+          if (radio.checked && radio.value === "Sam pookie") {
+            correctSelected = true;
+          }
+        });
+
+        if (!correctSelected) {
+          alert("Nope that's not the correct one :)");
+        } else {
+          window.location.href = 'dessert.html';
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activities</title>
+  <link rel="stylesheet" href="css/activities.css" />
+</head>
+<body>
+  <div id="activityquestion"><b>What are we doing after?</b></div>
+  <div class="activities-selection">
+    <div class="activity-item">
+      <img src="activities/cooking.jpg" alt="cooking" />
+      <label><input type="checkbox" name="activities" value="cooking" />Cooking together</label>
+    </div>
+    <div class="activity-item">
+      <img src="activities/cuddling.jpg" alt="cuddling" />
+      <label><input type="checkbox" name="activities" value="cuddling" />We Cuddle</label>
+    </div>
+    <div class="activity-item">
+      <img src="activities/drive.jpg" alt="drive" />
+      <label><input type="checkbox" name="activities" value="drive" />Night Drive</label>
+    </div>
+    <div class="activity-item">
+      <img src="activities/kiss.jpg" alt="kiss" />
+      <label><input type="checkbox" name="activities" value="kiss" />We kiss 👀</label>
+    </div>
+    <div class="activity-item">
+      <img src="activities/netflix.jpg" alt="netflix" />
+      <label><input type="checkbox" name="activities" value="netflix" />Or we Netflix and chill?</label>
+    </div>
+    <div class="activity-item">
+      <img src="activities/park.jpeg" alt="park.jpeg" />
+      <label>Hint : Try doing all of em :)</label>
+    </div>
+  </div>
+  <button class="button" onclick="checkSelection()">
+    Last page
+  </button>
+
+  <script>
+    function checkSelection() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      let allChecked = true;
+
+      checkboxes.forEach((checkbox) => {
+        if (!checkbox.checked) {
+          allChecked = false;
+        }
+      });
+
+      if (!allChecked) {
+        const button = document.querySelector('.button');
+        button.textContent = "Try looking at the hint honeyy";
+
+        setTimeout(function() {
+          button.textContent = "Last page";
+        }, 2000);
+      } else {
+        window.location.href = 'lastpage.html';
+      }
+    }
+  </script>
+</body>
+</html>
